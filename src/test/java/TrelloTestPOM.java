@@ -6,31 +6,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.core.Driver;
+import ui.core.DriverManage;
 import ui.core.WebDriverAction;
 import ui.pages.Login;
 import ui.pages.Profile;
 import ui.pages.Welcome;
 
 public class TrelloTestPOM {
-    public WebDriver driver;
-    public WebDriverWait wait;
-    public WebDriverAction action;
 
     @Before
     public void Setup() {
-        driver = new Driver().initDriver();
+
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        DriverManage.getInstance().getDriver().quit();
     }
 
     @Test
     public void testLogin() throws InterruptedException {
-        Welcome welcome= new Welcome(driver);
-        Login login= new Login(driver);
-        Profile profile = new Profile(driver);
+        Welcome welcome= new Welcome();
+        Login login= new Login();
+        Profile profile = new Profile();
         //driver.manage().window().maximize();
         //go to login page
         welcome.gotoLogin();

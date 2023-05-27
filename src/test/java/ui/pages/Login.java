@@ -16,11 +16,11 @@ public class Login extends AbstractPageObject {
     private WebElement passwordText;
     @FindBy(css = "Button#login-submit")
     private WebElement passwordLoginButton;
+    @FindBy(css = "div.css-z389ns span  span")
+    private WebElement messageError;
 
-    public Login(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver,this);
-    }
+
+
    public void login (String user, String password ){
        action.sendText(userNameText,user);
        //Click en el boton continue
@@ -29,6 +29,9 @@ public class Login extends AbstractPageObject {
        action.sendText(passwordText,password);
        //Click en el boton Login
        action.click(passwordLoginButton);
+   }
+   public String getMessage(){
+      return  action.getText(messageError);
    }
 
 }

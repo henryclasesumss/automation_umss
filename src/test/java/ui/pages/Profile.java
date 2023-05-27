@@ -11,10 +11,7 @@ public class Profile extends AbstractPageObject {
     @FindBy(css = "div.OUdAuicP657Tka span")
     private WebElement usernameTitle;
 
-    public Profile(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver,this);
-    }
+
     public String getUsernameTitle(String attribute){
         return action.getTextAttribute(usernameTitle,attribute);
     }
