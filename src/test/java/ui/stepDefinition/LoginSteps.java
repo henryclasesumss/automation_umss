@@ -41,4 +41,14 @@ public class LoginSteps {
        String Expected= login.getMessage();
        Assert.assertTrue(login.getMessage().contains(msg));
     }
+
+    @Given("I click on the profile")
+    public void iClickOnTheProfile() {
+        profile.clickProfile();
+    }
+
+    @When("I click on the logout")
+    public void iClickOnTheLogout() {
+        profile.logoutPage();
+    }
 }

@@ -22,7 +22,7 @@ dependencies {
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.9.0'
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.7.1'
-
+    implementation group: 'me.jvt.cucumber', name: 'reporting-plugin', version: '5.0.0'
 
 
 

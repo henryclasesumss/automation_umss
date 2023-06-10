@@ -11,11 +11,26 @@ public class Profile extends AbstractPageObject {
     @FindBy(css = "div.OUdAuicP657Tka span")
     private WebElement usernameTitle;
 
+    @FindBy(css = "ul li  button[data-testid=\"account-menu-logout\"]")
+    private WebElement logoutButton;
+
+    @FindBy(css = " #logout-submit span.css-178ag6o")
+    private WebElement logoutConfirm;
+
+
 
     public String getUsernameTitle(String attribute){
         return action.getTextAttribute(usernameTitle,attribute);
     }
 
+    public void clickProfile(){
+        action.click(usernameTitle);
+    }
+
+    public void logoutPage(){
+        action.click(logoutButton);
+        action.click(logoutConfirm);
+    }
 
 }
 
